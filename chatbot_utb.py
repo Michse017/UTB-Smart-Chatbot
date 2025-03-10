@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Chatbot for UTB Undergraduate Careers.
+Chatbot interactivo que utiliza la base de información (information_base.py)
+y BFS para mapear palabras clave de la consulta al nombre oficial de la carrera.
+Incluye normalización de texto (sin acentos), reglas de PyDatalog para inferir información adicional,
+y un historial de consultas para evitar repeticiones innecesarias.
+"""
+
 import re
 import unicodedata
 from information_base import career, graph, career_names, bfs, belongs_to_faculty
@@ -5,6 +14,9 @@ from pyDatalog import pyDatalog
 
 # Declarar variables para PyDatalog (incluyendo X, Y, Z, F)
 pyDatalog.create_terms('X, Y, Z, F')
+
+# Variable global para almacenar el historial de carreras consultadas
+asked_history = set()
 
 def normalize_str(s):
     """
@@ -49,17 +61,17 @@ def get_career_info(career_name):
     """
     Consulta la base de conocimientos (hechos de PyDatalog) para obtener la información de la carrera.
     """
-    result = career(career_name, X, Y, Z) # type: ignore
+    result = career(career_name, X, Y, Z) #type: ignore
     for r in result:
         return r[0], r[1], r[2]
     return None
 
 def chatbot_response(user_query):
     """
-    Procesa la consulta del usuario y retorna una respuesta formateada con la información de la carrera,
-    o responde de forma especial si se trata de agradecimientos o despedidas.
+    Procesa la consulta del usuario y retorna una respuesta formateada con la información de la carrera.
+    Si no se encuentra la carrera, retorna un mensaje informativo.
     """
-    # Detectar palabras de agradecimiento o despedida
+    # Primero, verificamos respuestas especiales para agradecimientos o despedidas
     lower_query = user_query.strip().lower()
     if lower_query in ["gracias", "muchas gracias", "thank you", "ty"]:
         return "¡De nada! Estoy aquí para ayudarte. Si necesitas algo más, no dudes en preguntar."
@@ -72,7 +84,7 @@ def chatbot_response(user_query):
         if info:
             desc, duration, modality = info
             # Consultar la inferencia de la facultad para la carrera
-            faculty_query = belongs_to_faculty(found_career, F) # type: ignore
+            faculty_query = belongs_to_faculty(found_career, F) #type: ignore
             solutions = list(faculty_query)
             if solutions:
                 if len(solutions[0]) >= 2:
@@ -95,10 +107,21 @@ def start_chat():
     print("Bienvenido al Chatbot de carreras de pregrado de la UTB.")
     print("Escribe 'salir' para terminar la conversación.")
     while True:
-        user_input = input("Tú: ")
+        user_input = input("Tú: ").strip()
         if user_input.lower() in ['salir', 'exit', 'quit']:
             print("Chatbot: Gracias por usar el servicio. ¡Hasta luego!")
             break
+
+        # Intentar detectar la carrera a consultar
+        found_career = find_career(user_input)
+        if found_career:
+            if found_career in asked_history:
+                confirm = input(f"Ya se consultó la carrera '{found_career}'. ¿Deseas ver la información de nuevo? (si/no): ").strip().lower()
+                if confirm not in ['si', 'yes']:
+                    print("Chatbot: OK, continuamos.")
+                    continue
+            else:
+                asked_history.add(found_career)
         response = chatbot_response(user_input)
         print("Chatbot:", response)
 

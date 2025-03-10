@@ -39,6 +39,23 @@ def bfs(graph, start, target_set):
 # Facultades y Carreras
 # ===============================
 # Facultad de Ingeniería
+# Facultad de Ingeniería, Arquitectura y Diseño
++career('Diseño',  # type: ignore
+         'El programa de Diseño forma profesionales para la creación y desarrollo de soluciones en diseño, integrando aspectos de ingeniería, arquitectura y comunicación visual.',
+         '9 semestres',
+         'presencial')
+
+# Escuela de Transformación Digital
++career('Marketing y Transformación Digital',  # type: ignore
+         'El programa de Marketing y Transformación Digital forma profesionales en estrategias de marketing digital y procesos de transformación en entornos tecnológicos.',
+         '8 semestres',
+         'presencial')
+
++career('Ciencia de Datos',  # type: ignore
+         'El programa de Ciencia de Datos capacita a los estudiantes en análisis de datos, modelado estadístico y técnicas de aprendizaje automático para la toma de decisiones basadas en información.',
+         '9 semestres',
+         'presencial')
+
 +career('Ingeniería Civil',  # type: ignore
          'El programa de Ingeniería Civil forma profesionales para el diseño, construcción y mantenimiento de infraestructuras.',
          '10 semestres',
@@ -51,68 +68,63 @@ def bfs(graph, start, target_set):
 
 +career('Ingeniería Industrial',  # type: ignore
          'El programa de Ingeniería Industrial se centra en la optimización de procesos, logística y gestión de operaciones.',
-         '8 semestres',
+         '10 semestres',
          'virtual')
 
 +career('Ingeniería de Sistemas y Computación',  # type: ignore
          'El programa de Ingeniería de Sistemas y Computación forma profesionales en el desarrollo de software y soluciones tecnológicas.',
-         '8 semestres',
+         '10 semestres',
          'presencial')
 
 +career('Ingeniería Ambiental',  # type: ignore
          'El programa de Ingeniería Ambiental se orienta hacia el desarrollo sostenible y la protección del medio ambiente.',
-         '8 semestres',
+         '10 semestres',
          'presencial')
 
 +career('Ingeniería Biomédica',  # type: ignore
          'El programa de Ingeniería Biomédica integra principios de ingeniería y ciencias médicas para diseñar soluciones en el ámbito de la salud.',
-         '8 semestres',
+         '10 semestres',
          'virtual')
 
 +career('Ingeniería Electrónica',  # type: ignore
          'El programa de Ingeniería Electrónica se dedica al diseño y desarrollo de circuitos y dispositivos electrónicos.',
-         '8 semestres',
+         '10 semestres',
          'presencial')
 
 +career('Ingeniería Mecatrónica',  # type: ignore
          'La carrera de Ingeniería Mecatrónica integra principios de mecánica, electrónica y computación para diseñar y desarrollar sistemas automatizados e inteligentes.',
-         '8 semestres',
+         '10 semestres',
          'presencial')
 
 +career('Ingeniería Química',  # type: ignore
          'El programa de Ingeniería Química aplica procesos químicos para la producción de materiales y energía.',
-         '8 semestres',
+         '10 semestres',
          'virtual')
 
 # Facultad de Ciencias Económicas y Administrativas
 +career('Administración de Empresas',  # type: ignore
          'El programa de Administración de Empresas ofrece habilidades en gestión, estrategia y liderazgo organizacional.',
-         '8 semestres',
+         '9 semestres',
          'presencial')
 
 +career('Economía',  # type: ignore
          'El programa de Economía estudia la producción, distribución y consumo de bienes y servicios.',
-         '8 semestres',
+         '9 semestres',
          'presencial')
 
 +career('Contaduría Pública',  # type: ignore
          'El programa de Contaduría Pública forma profesionales en auditoría financiera, gestión tributaria y contabilidad.',
-         '8 semestres',
+         '9 semestres',
          'virtual')
 
 +career('Negocios Internacionales',  # type: ignore
          'El programa de Negocios Internacionales se enfoca en el comercio global, marketing internacional y gestión intercultural.',
-         '8 semestres',
+         '9 semestres',
          'presencial')
-
-+career('Mercadeo y Negocios Globales',  # type: ignore
-         'El programa de Mercadeo y Negocios Globales enfatiza estrategias de mercado global y marketing digital.',
-         '8 semestres',
-         'virtual')
 
 +career('Finanzas y Comercio Exterior',  # type: ignore
          'El programa de Finanzas y Comercio Exterior abarca la gestión financiera, inversiones y comercio internacional.',
-         '8 semestres',
+         '9 semestres',
          'presencial')
 
 # Facultad de Ciencias Sociales y Humanidades
@@ -123,17 +135,17 @@ def bfs(graph, start, target_set):
 
 +career('Psicología',  # type: ignore
          'El programa de Psicología estudia el comportamiento humano y los procesos mentales.',
-         '8 semestres',
+         '9 semestres',
          'virtual')
 
 +career('Comunicación Social',  # type: ignore
          'El programa de Comunicación Social se enfoca en medios, periodismo y relaciones públicas.',
-         '8 semestres',
+         '9 semestres',
          'virtual')
 
 +career('Relaciones Internacionales',  # type: ignore
          'El programa de Relaciones Internacionales examina la política global, la diplomacia y las organizaciones internacionales.',
-         '8 semestres',
+         '9 semestres',
          'presencial')
 
 
@@ -142,6 +154,19 @@ def bfs(graph, start, target_set):
 # ========================================
 graph = {
     # Faculty of Engineering synonyms
+    # Para la carrera "Diseño"
+    'diseño': ['Diseño'],
+
+    # Para "Marketing y Transformación Digital"
+    'marketing y transformación digital': ['Marketing y Transformación Digital'],
+    'marketing': ['Marketing y Transformación Digital'],
+    'transformación digital': ['Marketing y Transformación Digital'],
+
+    # Para "Ciencia de Datos"
+    'ciencia de datos': ['Ciencia de Datos'],
+    'datos': ['Ciencia de Datos'],
+    'ciencia': ['Ciencia de Datos'],
+
     'ingeniería mecatrónica': ['mecatrónica', 'mecatronica'],
     'mecatrónica': ['Ingeniería Mecatrónica'],
     'mecatronica': ['Ingeniería Mecatrónica'],
@@ -187,10 +212,6 @@ graph = {
     'negocios': ['Negocios Internacionales'],
     'internacionales': ['Negocios Internacionales'],
 
-    'mercadeo y negocios globales': ['mercadeo', 'negocios globales'],
-    'mercadeo': ['Mercadeo y Negocios Globales'],
-    'negocios globales': ['Mercadeo y Negocios Globales'],
-
     'finanzas y comercio exterior': ['finanzas', 'comercio exterior'],
     'finanzas': ['Finanzas y Comercio Exterior'],
     'comercio exterior': ['Finanzas y Comercio Exterior'],
@@ -205,6 +226,9 @@ graph = {
 }
 
 career_names = {
+    'Diseño',
+    'Marketing y Transformación Digital',
+    'Ciencia de Datos',
     'Ingeniería Civil',
     'Ingeniería Mecánica',
     'Ingeniería Industrial',
