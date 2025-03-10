@@ -45,10 +45,10 @@ python chatbot_utb.py
 ## 🧠 Project Structure
 
 UTB-Smart-Chatbot/  
-├── chatbot_utb.py      # Main code  
-├── README.md           # Documentation  
-├── requirements.txt    # Dependencies  
-└── data/               # Program data (optional)  
+├── chatbot_utb.py      
+├── README.md           
+├── requirements.txt    
+└── data/               
 
 ## 🤝 Contributing
 Contributions are welcome!
@@ -70,20 +70,4 @@ Developed by Michel Augusto Castellanos Severiche (T00066207)
 Course: Artificial Intelligence - Technological University of Bolivar
 Professor: Edwin Puertas - © 2024
 
-
----
-
-### **Final Steps on GitHub**  
-1. Create the repository with the provided name and description.  
-2. Check **Add a README file**.  
-3. Replace the auto-generated `README.md` content with the Markdown above.  
-4. Upload the `chatbot_utb.py` file with the chatbot code.  
-5. (Optional) Add:  
-   - `data/` folder with additional program details  
-   - `requirements.txt` file for dependencies  
-   - MIT `LICENSE` file  
-
-**Note:** Replace `your-username` in the clone URL with your actual GitHub username.  
-
-This setup ensures a professional, fully documented repository in English! 🌟
 
