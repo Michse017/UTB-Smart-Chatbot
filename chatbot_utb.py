@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Chatbot for UTB Undergraduate Careers.
-Chatbot interactivo que utiliza la base de información (information_base.py)
-y BFS para mapear palabras clave de la consulta al nombre oficial de la carrera.
-Incluye normalización de texto (sin acentos), reglas de PyDatalog para inferir información adicional,
-y un historial de consultas para evitar repeticiones innecesarias.
-"""
-
 import re
 import unicodedata
 from information_base import career, graph, career_names, bfs, belongs_to_faculty
@@ -75,7 +66,7 @@ def chatbot_response(user_query):
     lower_query = user_query.strip().lower()
     if lower_query in ["gracias", "muchas gracias", "thank you", "ty"]:
         return "¡De nada! Estoy aquí para ayudarte. Si necesitas algo más, no dudes en preguntar."
-    if lower_query in ["adiós", "hasta luego", "bye"]:
+    if lower_query in ["adios", "hasta luego", "bye", "chao", "exit", "quit"]:
         return "¡Hasta luego! Gracias por utilizar el servicio. ¡Que tengas un excelente día!"
 
     found_career = find_career(user_query)
