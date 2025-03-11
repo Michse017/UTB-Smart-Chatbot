@@ -1,40 +1,35 @@
 # UTB-Smart-Chatbot 🚀
 
-UTB-Smart-Chatbot is an interactive chatbot that provides information about undergraduate programs at Universidad Tecnológica de Bolívar (UTB). It leverages first-order logic with PyDatalog for knowledge representation and inference, a BFS algorithm for keyword matching, text normalization, query history tracking, and custom responses for gratitude and farewells.
+UTB-Smart-Chatbot is an interactive chatbot that provides information about the undergraduate programs offered by the Universidad Tecnológica de Bolívar (UTB). The chatbot leverages first-order logic using PyDatalog for knowledge representation and inference, combined with a breadth-first search (BFS) algorithm to match user queries with the corresponding program information. It also features text normalization (to handle accents), a query history to avoid repetition, and special responses for thanks and farewells. 😃
 
 ## Features & Stuff 😎
 
-- **First-Order Logic Knowledge Base**  
-  Programs are stored as PyDatalog facts with rules to infer additional details like faculty affiliations.
+- **First-Order Logic Knowledge Base:**  
+  Programs are stored as facts with PyDatalog. Rules help infer extra info (like which faculty a program belongs to).
 
-- **BFS Keyword Matching**  
-  Uses a keyword graph and BFS algorithm to map user queries (including synonyms) to official program names.
+- **BFS Keyword Matching:**  
+  A keyword graph maps your query to the right program using a BFS algorithm. The process involves:
+  - **Text Normalization:** Input strings are normalized (accents removed, converted to lowercase) for better matching.
+  - **Graph Traversal:** The BFS algorithm explores related keywords to find the official program name.
 
-- **Text Normalization**  
-  Normalizes input text by removing accents and converting to lowercase for consistent matching.
+- **Query History:**  
+  The bot keeps track of what you've already asked and asks if you want to see the info again. 🔄
 
-- **Query History Tracking**  
-  Maintains a history of user queries to avoid repetition and prompts users if they repeat a question. 🔄
+- **Special Responses:**  
+  Custom replies are provided for thanks ("gracias", etc.) and farewells ("adiós", "chao", etc.).
 
-- **Special Responses**  
-  Custom replies for gratitude ("gracias") and farewells ("adiós", "chao").
+- **Extensibility:**  
+  New programs (including those from the School of Engineering, Architecture and Design, and the School of Digital Transformation) can be added easily.
 
-- **Extensibility**  
-  Easily add new programs from different schools (e.g., Engineering, Digital Transformation).
+- **Planned Diagrams:**  
+  Activity diagrams and use case diagrams will be added later to illustrate system processes and interactions. 📊
 
-## Diagrams 📊 (Planned)
+## Repository Structure
+UTB-Smart-Chatbot/
+├── diagrams/
+│   ├── Diagrama_de_actividades_chatbot_UTB.png
+│   └── Diagrama_de_caso_de_uso_chatbot_UTB.png
+├── information_base.py
+├── chatbot_utb.py
+└── README.md
 
-### Activity Diagram  
-**Purpose:**  
-Illustrates the workflow from user input to response, including normalization, BFS matching, and history checks.
-
-### Use Case Diagram  
-**Purpose:**  
-Shows interactions between users and the chatbot, covering use cases like "Query Program Information" and "Manage Knowledge Base".
-
-## Repo Structure 😅
-  UTB-Smart-Chatbot/
-  ├── information_base.py # Knowledge base, facts, rules, keyword graph
-  ├── chatbot_utb.py # Main chatbot script with interactive session
-  └── README.md # Project documentation
-  
