@@ -59,13 +59,13 @@ Activity diagrams and use case diagrams help visualize the system's flow and int
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your_username/UTB-Smart-Chatbot.git
+   git clone https://github.com/Michse017/UTB-Smart-Chatbot.git
    cd UTB-Smart-Chatbot
 
 2. **Install Dependencies:**
 
     Make sure you have Python 3.12 or later installed, then run:
-    pip install pyDatalog
+      pip install pyDatalog
 
 ## How to Use It 🤖
 
