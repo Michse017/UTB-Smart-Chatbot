@@ -54,3 +54,25 @@ Activity diagrams and use case diagrams help visualize the system's flow and int
   - README.md
 
 
+## Installation & Stuff 🛠️
+
+1. **Clone the Repository:**
+
+   ```bash
+   git clone https://github.com/your_username/UTB-Smart-Chatbot.git
+   cd UTB-Smart-Chatbot
+
+2. **Install Dependencies:**
+
+    Make sure you have Python 3.12 or later installed, then run:
+    pip install pyDatalog
+
+## How to Use It 🤖
+
+    Run the chatbot with:
+    
+    python chatbot_utb.py
+
+    The chatbot will launch an interactive session. Type queries like "sistemas", "civil", or "biomedica" to get program info. The bot will also handle thanks and farewells, and it will check if you have already queried a program. 🔥
+
+
