@@ -7,6 +7,20 @@ UTB-Smart-Chatbot is an interactive chatbot that provides information about the 
 - **First-Order Logic Knowledge Base:**  
   Programs are stored as facts with PyDatalog. Rules help infer extra info (like which faculty a program belongs to).
 
+  In this project, each undergraduate program is represented as a fact in the knowledge base using PyDatalog. For example, a program is added with a statement like:
+
+  ```python
+  +career('Ingeniería Civil', 
+           'El programa de Ingeniería Civil forma profesionales para el diseño, construcción y mantenimiento de infraestructuras.', 
+           '10 semestres', 
+           'presencial')
+  This declarative approach makes it easy to add, update, or remove programs without modifying complex control flow. Additionally, we define inference rules to deduce extra information. For instance, to determine which faculty a program belongs to, a rule is implemented as follows:
+
+    belongs_to_faculty(C, F) <= career(C, X, Y, Z) & (F == determine_faculty(C))
+
+  Here, the function determine_faculty examines the programs name and returns the corresponding faculty. This separation between facts (the stored programs) and rules (the logical inferences) allows the chatbot to be both flexible and easily extendable.
+
+
 - **BFS Keyword Matching:**  
   A keyword graph maps your query to the right program using a BFS algorithm. The process involves:
   - **Text Normalization:** Input strings are normalized (accents removed, converted to lowercase) for better matching.
