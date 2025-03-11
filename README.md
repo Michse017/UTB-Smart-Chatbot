@@ -32,15 +32,10 @@ Activity diagrams and use case diagrams will be added later to show the system's
 **Purpose:**  
 An Activity Diagram illustrates the workflow of the system. It shows the sequence of activities and decision points that occur during a particular process. In the context of the UTB-Smart-Chatbot, an activity diagram could depict the steps from when a user inputs a query, through text normalization, BFS matching in the keyword graph, retrieving program details, checking query history, and finally displaying the result.
 
-![Activity Diagram](diagrams/Diagrama_de_actividades_chatbot_UTB.png)
-
 ### Use Case Diagram
 
 **Purpose:**
 The use case diagram provides an overview of the interactions between the UTB-Smart-Chatbot and its users. It identifies the main functionalities (use cases) such as "Query Program Information", "Receive Program Details", and "Manage Knowledge Base", along with the actors (e.g., User, Administrator).
-
-```markdown
-![Use Case Diagram](diagrams/Diagrama_de_caso_de_uso_chatbot_UTB.png)
 
 ## Repo Structure (Sorta) 😅
   UTB-Smart-Chatbot/ ├── information_base.py # Contains the knowledge base, facts, rules, and the keyword graph. ├── chatbot_utb.py # Main chatbot script implementing the interactive session and query history. └── README.md # This file.
