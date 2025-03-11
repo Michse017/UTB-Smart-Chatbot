@@ -21,8 +21,27 @@ UTB-Smart-Chatbot is an interactive chatbot that provides information about the 
 - **Extensibility:**  
   New programs (including those from the School of Engineering, Architecture and Design, and the School of Digital Transformation) can be added easily.
 
-- **Planned Diagrams:**  
-  Activity diagrams and use case diagrams will be added later to illustrate system processes and interactions. 📊
+## Planned Diagrams 📊
+
+Activity diagrams and use case diagrams help visualize the system's flow and interactions. Below is a brief description of each type of diagram:
+
+1. **Use Case Diagram**  
+   - **Purpose:** Shows how different actors (e.g., User, Admin, Agent) interact with the chatbot. It highlights the main functionalities (use cases) such as asking questions, updating the knowledge base, and customizing the chatbot.  
+   - **Example:** In the figure, you can see how the “Usuario” actor uses the chatbot, and the “Admin” actor updates or customizes it, while an internal “Agente” can respond to queries or consult the knowledge base.
+
+   ![Use Case Diagram](diagrams/Diagrama_de_caso_de_uso_chatbot_UTB.png)
+
+2. **Activity Diagram**  
+   - **Purpose:** Depicts the sequence of activities (steps or states) within the chatbot’s workflow. It covers how the user’s input is processed, how the chatbot checks the knowledge base, and how it decides on a response.  
+   - **Example:** In the figure, you can see how the chatbot processes input, determines if the query can be answered, and either returns structured information or asks for clarification if the user’s intent is unclear.
+
+   ![Activity Diagram](diagrams/Diagrama_de_actividades_chatbot_UTB.png)
+
+3. **Agent Diagram**  
+   - **Purpose:** Illustrates how the chatbot agent perceives inputs (Sensors), processes them (NPL and knowledge base), and then makes decisions leading to actions (Actuators). It also shows the environment in which the agent operates.  
+   - **Example:** In the figure, you can see how the user’s query becomes a “sensor” input, how the agent checks its internal state and knowledge base, and finally produces a response (actuation) to the user.
+
+   ![Agent Diagram](diagrams/Agent_Diagram.png)
 
 ## Repository Structure:
 
