@@ -61,6 +61,7 @@ Activity diagrams and use case diagrams help visualize the system's flow and int
 
 - **UTB-Smart-Chatbot/**
   - **diagrams/**
+    - Agent_chatbot_UTB_final.png
     - Diagrama_de_actividades_chatbot_UTB.png
     - Diagrama_de_caso_de_uso_chatbot_UTB.png
   - information_base.py
