@@ -32,7 +32,6 @@ Activity diagrams and use case diagrams will be added later to show the system's
 **Purpose:**  
 An Activity Diagram illustrates the workflow of the system. It shows the sequence of activities and decision points that occur during a particular process. In the context of the UTB-Smart-Chatbot, an activity diagram could depict the steps from when a user inputs a query, through text normalization, BFS matching in the keyword graph, retrieving program details, checking query history, and finally displaying the result.
 
-```markdown
 ![Activity Diagram](diagrams/Diagrama_de_actividades_chatbot_UTB.png)
 
 ### Use Case Diagram
