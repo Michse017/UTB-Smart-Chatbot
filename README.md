@@ -24,7 +24,7 @@ UTB-Smart-Chatbot is an interactive chatbot that provides information about the 
 - **Planned Diagrams:**  
   Activity diagrams and use case diagrams will be added later to illustrate system processes and interactions. 📊
 
-**Repository Structure:**
+## Repository Structure:
 
 - **UTB-Smart-Chatbot/**
   - **diagrams/**
