@@ -1,73 +1,68 @@
-# UTB-Smart-Chatbot
-Conversational chatbot for the Technological University of Bolivar (UTB) that provides information about undergraduate programs using NLP and search algorithms.
+# UTB-Smart-Chatbot 🚀
 
-# 🤖 UTB Smart Chatbot  
+UTB-Smart-Chatbot is an interactive chatbot that gives info about undergraduate programs at Universidad Tecnológica de Bolívar (UTB). It uses first-order logic with PyDatalog for knowledge representation and inference, plus a BFS algorithm to match queries with program info. It also normalizes text (removes accents), keeps a query history to avoid repetition, and gives special responses for thanks and farewells. 😃
 
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)  
-[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](https://github.com/your-username/UTB-Smart-Chatbot)  
+## Features & Stuff 😎
 
-Institutional chatbot for the Technological University of Bolivar (UTB) that uses natural language processing (NLP) and search algorithms to provide information about undergraduate programs.  
+- **First-Order Logic Knowledge Base:**  
+  Programs are stored as facts with PyDatalog. Rules help infer extra info (like which faculty a program belongs to).
 
-## 🚀 Features  
+- **BFS Keyword Matching:**  
+  The chatbot uses a keyword graph where each node represents a keyword or synonym related to a specific program. When a user enters a query, the input is first normalized (accents removed, converted to lowercase), then tokenized. The chatbot applies a Breadth-First Search (BFS) algorithm to traverse this graph starting from the query tokens, exploring neighboring nodes until it finds a match with an official program name. This approach ensures that even if a user uses different terms or synonyms, the system can still map the query to the correct program.
 
-- **Semantic search** with spaCy (Spanish language model)  
-- **BFS algorithm** for option traversal  
-- Database of **12 undergraduate programs**  
-- Conversation history management  
-- Advanced text normalization (accents, plurals, lemmatization)  
-- Intuitive conversational interface  
+- **Text Normalization:**  
+  Input strings are normalized (accents removed, lowercase conversion) to improve matching.
 
-## 📦 Requirements  
+- **Query History:**  
+  The bot keeps track of what you've already asked and asks if you want to see the info again. 🔄
 
-- Python 3.10+  
-- spaCy and Spanish model:  
-  ```bash  
-  pip install spacy  
-  python -m spacy download es_core_news_md  
+- **Special Responses:**  
+  Custom replies for thanks ("gracias", etc.) and farewells ("adiós", "chao", etc.).
 
+- **Extensibility:**  
+  Easily add new programs (e.g., from the School of Engineering, Architecture and Design, and the School of Digital Transformation).
 
-## 🛠️ Installation
+- **Planned Diagrams:**  
+  ## Diagrams 📊
 
-Clone the repository:
-git clone https://github.com/your-username/UTB-Smart-Chatbot.git  
-cd UTB-Smart-Chatbot  
+Activity diagrams and use case diagrams will be added later to show the system's flow. In this section, I will include the diagrams along with a description of their purpose and instructions on how to embed them in this document.
 
-Run the chatbot:
-python chatbot_utb.py  
+### Activity Diagram
 
-## 🎮 Usage
+**Purpose:**  
+An Activity Diagram illustrates the workflow of the system. It shows the sequence of activities and decision points that occur during a particular process. In the context of the UTB-Smart-Chatbot, an activity diagram could depict the steps from when a user inputs a query, through text normalization, BFS matching in the keyword graph, retrieving program details, checking query history, and finally displaying the result.
 
-> I want information about biomedical engineering  
-> What programs are related to law?  
-> Computer systems  
-> Exit  
+```markdown
+![Activity Diagram](diagrams/Diagrama_de_actividades_chatbot_UTB.png)
 
-## 🧠 Project Structure
+### Use Case Diagram
 
-UTB-Smart-Chatbot/  
-├── chatbot_utb.py      
-├── README.md           
-├── requirements.txt    
-└── data/               
+**Purpose:**
+The use case diagram provides an overview of the interactions between the UTB-Smart-Chatbot and its users. It identifies the main functionalities (use cases) such as "Query Program Information", "Receive Program Details", and "Manage Knowledge Base", along with the actors (e.g., User, Administrator).
 
-## 🤝 Contributing
-Contributions are welcome!
+```markdown
+![Use Case Diagram](diagrams/Diagrama_de_caso_de_uso_chatbot_UTB.png)
 
-Fork the project
+## Repo Structure (Sorta) 😅
+  UTB-Smart-Chatbot/ ├── information_base.py # Contains the knowledge base, facts, rules, and the keyword graph. ├── chatbot_utb.py # Main chatbot script implementing the interactive session and query history. └── README.md # This file.
 
-Create a branch (git checkout -b feature/new-feature)
+## Installation & Stuff 🛠️
 
-Commit changes (git commit -m 'Add new feature')
+1. **Clone the Repository:**
 
-Push to the branch (git push origin feature/new-feature)
+   ```bash
+   git clone https://github.com/your_username/UTB-Smart-Chatbot.git
+   cd UTB-Smart-Chatbot
 
-Open a Pull Request
+2. **Install Dependencies:**
 
-📄 License
-This project is licensed under the MIT License.
+  Ensure you have Python 3.12 or later installed, then run:
+  pip install pyDatalog
 
-Developed by Michel Augusto Castellanos Severiche (T00066207)
-Course: Artificial Intelligence - Technological University of Bolivar
-Professor: Edwin Puertas - © 2024
+## Usage 🤖
 
+  o start the chatbot, run the following command in your terminal:
 
+  python chatbot_utb.py
+
+  The chatbot will launch an interactive session. Type your queries (e.g., "sistemas", "civil", "biomedica") to receive program information. The system will also handle thanks and farewells and    will check if you have already queried a program.
