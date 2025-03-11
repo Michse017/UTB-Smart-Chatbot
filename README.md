@@ -38,7 +38,8 @@ An Activity Diagram illustrates the workflow of the system. It shows the sequenc
 The use case diagram provides an overview of the interactions between the UTB-Smart-Chatbot and its users. It identifies the main functionalities (use cases) such as "Query Program Information", "Receive Program Details", and "Manage Knowledge Base", along with the actors (e.g., User, Administrator).
 
 ## Repo Structure (Sorta) 😅
-  UTB-Smart-Chatbot/ ├── information_base.py # Contains the knowledge base, facts, rules, and the keyword graph. ├── chatbot_utb.py # Main chatbot script implementing the interactive session and query history. └── README.md # This file.
+  
+UTB-Smart-Chatbot/ ├── information_base.py # Contains the knowledge base, facts, rules, and the keyword graph. ├── chatbot_utb.py # Main chatbot script implementing the interactive session and query history. └── README.md # This file.
 
 ## Installation & Stuff 🛠️
 
