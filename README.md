@@ -33,7 +33,8 @@ Illustrates the workflow from user input to response, including normalization, B
 Shows interactions between users and the chatbot, covering use cases like "Query Program Information" and "Manage Knowledge Base".
 
 ## Repo Structure 😅
-UTB-Smart-Chatbot/
-├── information_base.py # Knowledge base, facts, rules, keyword graph
-├── chatbot_utb.py # Main chatbot script with interactive session
-└── README.md # Project documentation
+  UTB-Smart-Chatbot/
+  ├── information_base.py # Knowledge base, facts, rules, keyword graph
+  ├── chatbot_utb.py # Main chatbot script with interactive session
+  └── README.md # Project documentation
+  
